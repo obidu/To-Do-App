@@ -1,0 +1,62 @@
+.modal-container {
+  border-radius: 0.5rem;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 40rem;
+  height: 12rem;
+  z-index: 10;
+  position: fixed;
+  bottom: 50%;
+  left: calc(50% - 20rem);
+  flex-direction: column;
+  margin: 0;
+  row-gap: 2rem;
+}
+
+.modal-container > p {
+  height: 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.modal-buttons > button {
+  cursor: pointer;
+  height: 3.5rem;
+  width: 9rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  background-color: #ffc857;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  transition: 0.3s;
+}
+
+.modal-buttons > button:hover{
+ color: #FFC857;
+ background-color: white;
+ border-color: #FFC857;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.modal-buttons > button:first-child {
+  background-color: transparent;
+  color: #ffc857;
+  border-color: #ffc857;
+  transition: 0.3s;
+}
+
+.modal-buttons > button:first-child:hover {
+  background-color: #ffc857;
+  color: white;
+  border-color: white;
+}
