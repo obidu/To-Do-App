@@ -3,8 +3,12 @@ import './Card.css'
 import { useState } from 'react';
 import Modal from "../Modal/Modal";
 import Backdrop from "../Backdrop/Backdrop";
+import { Context } from "../../context/context";
 
-const Card = ({ title, description }) => {
+
+const Card = ({ title, description, sterge }) => {
+
+    const { cards, setCards } = Context()
 
     const [deleteBtn, setDeleteBtn] = useState(false);
 
@@ -12,12 +16,12 @@ const Card = ({ title, description }) => {
         setDeleteBtn(true);
     }
 
-    const closeModalHandler = () => {
-        setDeleteBtn(false);
+    const deleteCard = (title) => {
+        setCards(cards.filter((obj) => obj.title !== title))
     }
 
-    const deleteCard = () => {
-        alert('Delete Clicked!')
+    const closeModalHandler = () => {
+        setDeleteBtn(false);
     }
 
     return (
@@ -26,9 +30,9 @@ const Card = ({ title, description }) => {
                 <p className="card-title">{title}</p>
                 <button className="closeBtn" onClick={deleteHandler}>X</button>
             </div>
-            <li className="card-description">{description}</li>
+            <div className="card-description">{`-${description}`}</div>
             {deleteBtn && <Backdrop onClick={closeModalHandler} />}
-            {deleteBtn && <Modal onClick={closeModalHandler} onDelete={deleteCard} />}
+            {deleteBtn && <Modal onClick={closeModalHandler} onDelete={() => deleteCard(title) } />}
         </div>
 
     )

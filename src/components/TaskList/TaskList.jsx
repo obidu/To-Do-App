@@ -1,26 +1,27 @@
 import React from "react";
 import './TaskList.css';
-import Card from "../Card/Card";
 import { useState } from "react";
-import Modal from "../Modal/Modal";
 import Backdrop from "../Backdrop/Backdrop";
 import CreateTask from "../CreateTask/CreateTask";
+import List from "../List/List";
+import { Context } from "../../context/context";
 
+// import { Ctx } from "../../context/context";
+
+// const context = useContext(Ctx)
+// ca sa fie folosit trebuia scris context.setCards
 
 
 const TaskList = () => {
-
-
-    const [tasks, setTasks] = useState(false);
-
+    const { cards, hide, setHide} = Context()
 
     const addTaskHandler = (e) => {
         // console.log('add task');
-        setTasks(true);
+        setHide(true);
     };
 
     const closeModalHandler = () => {
-        setTasks(false);
+        setHide(false);
     }
 
     return (
@@ -30,11 +31,10 @@ const TaskList = () => {
                 <button onClick={addTaskHandler}>+  Add Task</button>
             </div>
             <div className="tasks">
-                {tasks && <CreateTask />}
-                {tasks && <Backdrop onClick={closeModalHandler} />}
-                <Card title="React Chapter 12" description="npx create-react-app" />
+                {cards && <List />}
+                {hide && <CreateTask />}
+                {hide && <Backdrop onClick={closeModalHandler} />}
             </div>
-
         </div >
     )
 }

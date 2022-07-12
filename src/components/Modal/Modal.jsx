@@ -1,9 +1,16 @@
 import React from "react";
 import './Modal.css';
 import { useState } from "react";
+import { Context } from "../../context/context";
 
 
 const Modal = (props) => {
+
+    const { cards, setCards } = Context()
+
+    const deleteCard = (title) => {
+        setCards(cards.filter((obj) => obj.title !== title))
+    }
 
     return (
         <div className="modal-container">
