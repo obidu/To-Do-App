@@ -49,6 +49,19 @@ h1 {
   align-content: flex-start;
 }
 
+/*Extra extra small devices(320px-480px)*/
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  .task-create-btn > button {
+    width: 4.3rem;
+    height: 2rem;
+    font-size: 0.7rem;
+  }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 600px) {
   
