@@ -50,7 +50,7 @@ h1 {
 }
 
 /*Extra extra small devices(320px-480px)*/
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   h1 {
     font-size: 1.1rem;
   }
@@ -63,7 +63,7 @@ h1 {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   
   h1 {
     font-size: 1.6rem;
